@@ -3,7 +3,7 @@
 ## Requirements
 - Java 11
 - Spring Boot 2
-- Maaven
+- Maven
 - Docker
 - MongoDB
 
