@@ -9,6 +9,6 @@
 
 ## Services - document
 
-| Proyect | port |
+| Proyect | document |
 | ------ | ------ |
 | Magnet-mutant-api  | http://ec2-100-24-221-97.compute-1.amazonaws.com/swagger-ui.html# |
