@@ -1,59 +1,33 @@
 package com.mutant.api.dto;
 
-public class DnaDTO {
+import lombok.Builder;
+
+@Builder
+public class DnaDto {
 	
-	private String idAdn;
+	private String[] dna;
 	
-	private String adnChain;
 	
-	private boolean mutant;
+	public DnaDto() {
+	}
+
+	public DnaDto(String[] dna) {
+		this.dna = dna;
+	}
+
+	/**
+	 * @return the dna
+	 */
+	public String[] getDna() {
+		return dna;
+	}
+
+	/**
+	 * @param dna the dna to set
+	 */
+	public void setDna(String[] dna) {
+		this.dna = dna;
+	}
+
 	
-
-	public DnaDTO() {
-		// TODO Auto-generated constructor stub
-	}
-
-
-	/**
-	 * @return the idAdn
-	 */
-	public String getIdAdn() {
-		return idAdn;
-	}
-
-	/**
-	 * @param idAdn the idAdn to set
-	 */
-	public void setIdAdn(String idAdn) {
-		this.idAdn = idAdn;
-	}
-
-	/**
-	 * @return the adnChain
-	 */
-	public String getAdnChain() {
-		return adnChain;
-	}
-
-	/**
-	 * @param adnChain the adnChain to set
-	 */
-	public void setAdnChain(String adnChain) {
-		this.adnChain = adnChain;
-	}
-
-	/**
-	 * @return the mutant
-	 */
-	public boolean isMutant() {
-		return mutant;
-	}
-
-	/**
-	 * @param mutant the mutant to set
-	 */
-	public void setMutant(boolean mutant) {
-		this.mutant = mutant;
-	}
-
 }

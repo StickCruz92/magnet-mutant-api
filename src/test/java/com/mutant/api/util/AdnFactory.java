@@ -1,8 +1,8 @@
 package com.mutant.api.util;
 
 import com.github.javafaker.Faker;
-import com.mutant.api.dto.AdnDto;
-import com.mutant.api.dto.StatiAdnDto;
+import com.mutant.api.dto.DnaDto;
+import com.mutant.api.dto.StaticAdnDto;
 import com.mutant.api.model.Adn;
 
 public class AdnFactory {
@@ -19,32 +19,32 @@ public class AdnFactory {
 		
 	}
 	
-	public static StatiAdnDto getAnyStatiAdnDto() {
-		return StatiAdnDto.builder()
+	public static StaticAdnDto getAnyStatiAdnDto() {
+		return StaticAdnDto.builder()
 				.countHumanDna(falker.number().randomDigit())
 				.countMutantDna(falker.number().randomDigit())
 				.ratio(falker.number().randomDouble(2, 1, 999999999))
 				.build();
 	}
 	/*AdnDto dna*/
-	public static AdnDto getAnyAdnDtoMutant() {
+	public static DnaDto getAnyAdnDtoMutant() {
 		String[] dna = { "ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTQ" };
-		return AdnDto.builder()
+		return DnaDto.builder()
 				.dna(dna)
 				.build();
 	}
 	
-	public static AdnDto getAnyAdnDtoHuman() {
+	public static DnaDto getAnyAdnDtoHuman() {
 		String[] dna = { "OIUUUY","OIUOIO","GJHKJH","KUKIUY","REWQRR","WFFDP" };
-		return AdnDto.builder()
+		return DnaDto.builder()
 				.dna(dna)
 				.build();
 	}
 	
 	
-	public static AdnDto getAnyAdnDtoMutantExist() {
+	public static DnaDto getAnyAdnDtoMutantExist() {
 		String[] dna = { "ATGCGA","CAGTGC","TTATGT","AGAAGG","CCCCTA","TCACTV" };
-		return AdnDto.builder()
+		return DnaDto.builder()
 				.dna(dna)
 				.build();
 	}

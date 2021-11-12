@@ -29,8 +29,8 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.google.gson.Gson;
-import com.mutant.api.dto.AdnDto;
-import com.mutant.api.dto.StatiAdnDto;
+import com.mutant.api.dto.DnaDto;
+import com.mutant.api.dto.StaticAdnDto;
 import com.mutant.api.model.Adn;
 import com.mutant.api.rest.MutantRest;
 import com.mutant.api.service.ServiceMuntant;
@@ -88,7 +88,7 @@ class MutantRestTest {
 	@Test
 	void getAdnStatusSuccess() throws Exception {
 		Response response = null;
-		StatiAdnDto statusOne = AdnFactory.getAnyStatiAdnDto();
+		StaticAdnDto statusOne = AdnFactory.getAnyStatiAdnDto();
 
 
 		response = new Response(HttpStatus.OK.value(), "consulta exitosa", statusOne);
@@ -108,10 +108,10 @@ class MutantRestTest {
 	@Test
 	void validateMutantSuccess() throws Exception {
 		Response response = null;
-		AdnDto adnDto = AdnFactory.getAnyAdnDtoMutant();
+		DnaDto adnDto = AdnFactory.getAnyAdnDtoMutant();
 
 		response = new Response(HttpStatus.OK.value(), "consulta exitosa", MUTANT_TRUE.toString());
-		when(this.serviceMuntant.validateMutant(any(AdnDto.class))).thenReturn(response);
+		when(this.serviceMuntant.validateMutant(any(DnaDto.class))).thenReturn(response);
 		restMock.perform(post(URI.create("/api/v1/muntant/")).contentType(MediaType.APPLICATION_JSON_VALUE)
 				.content(gson.toJson(response).getBytes()).characterEncoding("utf-8")).andDo(print())//;
 				.andExpect(status().isOk())//;
@@ -127,10 +127,10 @@ class MutantRestTest {
 	@Test
 	void validateHumanSuccess() throws Exception {
 		Response response = null;
-		AdnDto adnDto = AdnFactory.getAnyAdnDtoHuman();
+		DnaDto adnDto = AdnFactory.getAnyAdnDtoHuman();
 
 		response = new Response(HttpStatus.FORBIDDEN.value(), "consulta exitosa", MUTANT_FALSE.toString());
-		when(this.serviceMuntant.validateMutant(any(AdnDto.class))).thenReturn(response);
+		when(this.serviceMuntant.validateMutant(any(DnaDto.class))).thenReturn(response);
 		restMock.perform(post(URI.create("/api/v1/muntant/")).contentType(MediaType.APPLICATION_JSON_VALUE)
 				.content(gson.toJson(response).getBytes()).characterEncoding("utf-8")).andDo(print())
 				.andExpect(status().isOk())

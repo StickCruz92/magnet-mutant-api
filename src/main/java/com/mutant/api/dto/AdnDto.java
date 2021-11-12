@@ -1,62 +1,59 @@
 package com.mutant.api.dto;
 
-import lombok.Builder;
-
-
-@Builder
 public class AdnDto {
 
-   private String id;	
-   private String[] dna;
-   private boolean isMutant;
-   
-   public AdnDto() {}
-   
-   public AdnDto(String id, String[] dna, boolean isMutant) {
-		this.id = id;
-		this.dna = dna;
-		this.isMutant = isMutant;
-	}
-		
-   
-   
+	private String idDna;
+	private String dnaChain;
+	private String mutant;
+	
 
-/**
- * @return the id
- */
-public String getId() {
-	return id;
-}
-/**
- * @param id the id to set
- */
-public void setId(String id) {
-	this.id = id;
-}
-/**
- * @return the dna
- */
-public String[] getDna() {
-	return dna;
-}
-/**
- * @param dna the dna to set
- */
-public void setDna(String[] dna) {
-	this.dna = dna;
-}
-/**
- * @return the isMutant
- */
-public boolean isMutant() {
-	return isMutant;
-}
-/**
- * @param isMutant the isMutant to set
- */
-public void setMutant(boolean isMutant) {
-	this.isMutant = isMutant;
-} 
-   
-   
+	public AdnDto() {}
+
+
+	public AdnDto(String idDna, String dnaChain, String mutant) {
+		this.idDna = idDna;
+		this.dnaChain = dnaChain;
+		this.mutant = mutant;
+	}
+	
+	
+	/**
+	 * @return the idDna
+	 */
+	public String getIdDna() {
+		return idDna;
+	}
+	/**
+	 * @param idDna the idDna to set
+	 */
+	public void setIdDna(String idDna) {
+		this.idDna = idDna;
+	}
+	/**
+	 * @return the dnaChain
+	 */
+	public String getDnaChain() {
+		return dnaChain;
+	}
+	/**
+	 * @param dnaChain the dnaChain to set
+	 */
+	public void setDnaChain(String dnaChain) {
+		this.dnaChain = dnaChain;
+	}
+	/**
+	 * @return the mutant
+	 */
+	public String getMutant() {
+		return mutant;
+	}
+	/**
+	 * @param mutant the mutant to set
+	 */
+	public void setMutant(String mutant) {
+		this.mutant = mutant;
+	}
+
+
+
 }
